@@ -2,7 +2,7 @@ export class Wrapper {
     constructor() {
     }
 
-    helloWorld(): string {
-        return "Hello world - Word wrap"
+    textCutter(text: string, number: number): any {
+        return null
     }
 }
