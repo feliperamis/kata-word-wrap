@@ -28,16 +28,17 @@ describe("Word wrap service test", () => {
         expect(outputText).toEqual(
             "Lorem ipsu\n" +
             "m dolor si\n" +
-            "t amet, c\n" +
-            "onsectetur\n" +
+            "t amet, co\n" +
+            "nsectetur \n" +
             "adipiscing\n" +
-            "elit, sed d\n" +
-            "o eiusmod\n" +
-            "tempor inc\n" +
-            "ididunt ut\n" +
-            "labore et \n" +
-            "dolore mag \n" +
-            "na aliqua."
+            " elit, sed\n" +
+            " do eiusmo\n" +
+            "d tempor i\n" +
+            "ncididunt \n" +
+            "ut labore \n" +
+            "et dolore \n" +
+            "magna aliq\n" +
+            "ua."
         );
     });
 
