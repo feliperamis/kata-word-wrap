@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/feliperamis/kata-word-wrap.git"
   },
-  "author": "",
+  "author": "Felipe Ramis",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/feliperamis/kata-word-wrap/issues"
