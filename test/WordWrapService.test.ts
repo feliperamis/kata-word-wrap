@@ -22,4 +22,23 @@ describe("Word wrap service test", () => {
         expect(valid).toBeTruthy();
     });
 
+    test("should wrap the text ", () => {
+        const inputText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        const outputText = wordWrapService.wrap(inputText, 10);
+        expect(outputText).toEqual(
+            "Lorem ipsu\n" +
+            "m dolor si\n" +
+            "t amet, c\n" +
+            "onsectetur\n" +
+            "adipiscing\n" +
+            "elit, sed d\n" +
+            "o eiusmod\n" +
+            "tempor inc\n" +
+            "ididunt ut\n" +
+            "labore et \n" +
+            "dolore mag \n" +
+            "na aliqua."
+        );
+    });
+
 });

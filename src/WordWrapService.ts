@@ -13,4 +13,8 @@ export class WordWrapService {
     checkMinimunLenthOfText(text: string, lines: number):boolean {
         return text.length >= lines;
     }
+
+    wrap(text: string, lines: number) {
+        
+    }
 }
