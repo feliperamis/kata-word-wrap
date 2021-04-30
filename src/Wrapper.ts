@@ -5,4 +5,8 @@ export class Wrapper {
     helloWorld(): string {
         return "Hello world - Word wrap"
     }
+
+    wrapText(text: string, limit: number): string {
+      return null
+    }
 }
