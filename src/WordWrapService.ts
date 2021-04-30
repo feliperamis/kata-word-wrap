@@ -9,4 +9,8 @@ export class WordWrapService {
     checkValidNumber(text: string, lines: number) {
         return lines > 0;
     }
+
+    checkMinimunLenthOfText(text: string, lines: number) {
+        
+    }
 }

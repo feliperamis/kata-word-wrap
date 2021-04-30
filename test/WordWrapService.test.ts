@@ -17,4 +17,9 @@ describe("Word wrap service test", () => {
         expect(valid).toBeTruthy();
     });
 
+    test("should return if the text can be splited  at least one time  ", () => {
+        const valid = wordWrapService.checkMinimunLenthOfText('fakeTestWithAtLeastTenCharacters', 10);
+        expect(valid).toBeTruthy();
+    });
+
 });
