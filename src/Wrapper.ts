@@ -1,4 +1,4 @@
-export class WordWrapService {
+export class Wrapper {
     constructor() {
     }
 
