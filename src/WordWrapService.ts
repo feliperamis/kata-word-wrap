@@ -6,11 +6,11 @@ export class WordWrapService {
         return "Hello world - Word wrap"
     }
 
-    checkValidNumber(text: string, lines: number) {
+    checkValidNumber(text: string, lines: number):boolean {
         return lines > 0;
     }
 
-    checkMinimunLenthOfText(text: string, lines: number) {
-        
+    checkMinimunLenthOfText(text: string, lines: number):boolean {
+        return text.length >= lines;
     }
 }
