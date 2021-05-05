@@ -13,6 +13,6 @@ export class Wrapper {
             throw new WrapperValidationError();
         }
 
-        return "Lorem";
+        return inputText;
     }
 }
