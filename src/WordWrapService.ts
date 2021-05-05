@@ -36,7 +36,7 @@ export class WordWrapService {
             if (
                 textLine.length === lines || 
                 forceJump || 
-                (i + 1) === splitted.length
+                ((i + 1) === splitted.length && textLine.length)
             ) {
                 arrayOfLines.push(textLine);
                 textLine = "";
