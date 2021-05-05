@@ -4,18 +4,32 @@ import {WrapperValidationError} from "../src/WrapperValidationError";
 describe("Word wrap service test", () => {
     let wrapper: Wrapper;
     const loremIpsumText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    const wrapped =
+        "Lorem ipsu\n" +
+        "m dolor si\n" +
+        "t amet, co\n" +
+        "nsectetur \n" +
+        "adipiscing\n" +
+        " elit, sed\n" +
+        " do eiusmo\n" +
+        "d tempor i\n" +
+        "ncididunt \n" +
+        "ut labore \n" +
+        "et dolore \n" +
+        "magna aliq\n" +
+        "ua.";
 
-    //
+
     // const validWrappedText = "Lorem ipsum\n" +
-    //     "dolor sit\n" +
+    //     "dolor sit \n" +
     //     "amet, consectetur\n" +
     //     "adipiscing\n" +
     //     "elit, sed \n" +
     //     "do eiusmod\n" +
     //     "tempor incididunt\n" +
-    //     "ut labore\n" +
-    //     "et dolore\n" +
-    //     "magna aliqua.";
+    //     "ut labore \n" +
+    //     "et dolore \n" +
+    //     "magna aliqua.\n"
 
     beforeAll(() => {
         wrapper = new Wrapper();
@@ -40,18 +54,20 @@ describe("Word wrap service test", () => {
 
     test("should return text wrapped when number of text characters is higher than max line", () => {
         const wrappedText = wrapper.wrap(loremIpsumText, 10);
-        const validWrappedText = "Lorem ipsu\n" +
+        const validWrappedText =
+            "Lorem ipsu\n" +
             "m dolor si\n" +
-            "t amet, c\n" +
-            "onsectetur\n" +
+            "t amet, co\n" +
+            "nsectetur \n" +
             "adipiscing\n" +
-            "elit, sed d\n" +
-            "o eiusmod\n" +
-            "tempor inc\n" +
-            "ididunt ut\n" +
-            "labore et \n" +
-            "dolore mag \n" +
-            "na aliqua."
+            " elit, sed\n" +
+            " do eiusmo\n" +
+            "d tempor i\n" +
+            "ncididunt \n" +
+            "ut labore \n" +
+            "et dolore \n" +
+            "magna aliq\n" +
+            "ua.";
         expect(wrappedText).toEqual(validWrappedText);
     });
 });

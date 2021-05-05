@@ -13,21 +13,11 @@ export class Wrapper {
             throw new WrapperValidationError();
         }
 
-        if (maxLine <= inputText.length) {
-            return "Lorem ipsu\n" +
-                "m dolor si\n" +
-                "t amet, c\n" +
-                "onsectetur\n" +
-                "adipiscing\n" +
-                "elit, sed d\n" +
-                "o eiusmod\n" +
-                "tempor inc\n" +
-                "ididunt ut\n" +
-                "labore et \n" +
-                "dolore mag \n" +
-                "na aliqua.";
+        // Base condition
+        if (inputText.length <= maxLine) {
+            return inputText;
         }
 
-        return inputText;
+        return inputText.substr(0, maxLine).concat('\n', this.wrap(inputText.substr(maxLine, inputText.length-1), maxLine));
     }
 }
