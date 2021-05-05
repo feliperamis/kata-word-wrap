@@ -8,20 +8,22 @@ export class Wrapper {
         return "Hello world - Word wrap"
     }
 
+    /**
+      Split has O(len) complexity with a one character separator,
+      and we iterate a second time for each word, so **O(len + number of words)**
+    */
     wrap(inputText: string, maxLine: number) {
         if (maxLine <= 0) {
             throw new WrapperValidationError();
         }
 
-        // Base condition
         if (inputText.length <= maxLine) {
             return inputText;
         }
 
-        const arrays = inputText.split(' ');
         let wrappedText = "";
         let count = 0;
-        arrays.forEach(word => {
+        inputText.split(' ').forEach(word => {
             wrappedText += word;
             count += word.length;
 
