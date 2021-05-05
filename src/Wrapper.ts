@@ -18,6 +18,25 @@ export class Wrapper {
             return inputText;
         }
 
-        return inputText.substr(0, maxLine).concat('\n', this.wrap(inputText.substr(maxLine, inputText.length-1), maxLine));
+        const arrays = inputText.split(' ');
+        let wrappedText = "";
+        let count = 0;
+        arrays.forEach(word => {
+            wrappedText += word;
+            count += word.length;
+
+            if (count === maxLine-1) {
+                wrappedText += " \n";
+                count = 0;
+            } else if (count >= maxLine) {
+                wrappedText += "\n";
+                count = 0;
+            } else {
+                wrappedText += " ";
+                count++;
+            }
+        });
+
+        return wrappedText;
     }
 }
