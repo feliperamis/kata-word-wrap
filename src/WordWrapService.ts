@@ -15,20 +15,21 @@ export class WordWrapService {
     }
 
     wrap(text: string, lines: number): string {
-        const splitted = text.split(' ');
-        let textLine = '';
+        const splitted = text.split(" ");
+        let textLine = "";
         const arrayOfLines = [];
         for (let i = 0; i < splitted.length; i++) {
             const word = splitted[i];
             textLine = !textLine.length 
                 ? word 
-                : textLine + " " + word;
-            if (textLine.length === 9) textLine = textLine + " ";
+                : (textLine + " " + word).length === (lines - 1)
+                    ? textLine + " " + word + " "
+                    : textLine + " " + word;
             if (textLine.length >= lines) {
                 arrayOfLines.push(textLine);
-                textLine = '';
+                textLine = "";
             }            
         }
-        return arrayOfLines.join('\n');
+        return arrayOfLines.join("\n");
     }
 }
