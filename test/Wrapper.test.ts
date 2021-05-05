@@ -20,16 +20,17 @@ describe("Word wrap service test", () => {
         "ua.";
 
 
-    // const validWrappedText = "Lorem ipsum\n" +
-    //     "dolor sit \n" +
-    //     "amet, consectetur\n" +
-    //     "adipiscing\n" +
-    //     "elit, sed \n" +
-    //     "do eiusmod\n" +
-    //     "tempor incididunt\n" +
-    //     "ut labore \n" +
-    //     "et dolore \n" +
-    //     "magna aliqua.\n"
+    const validWrappedText =
+        "Lorem ipsum\n" +
+        "dolor sit \n" +
+        "amet, consectetur\n" +
+        "adipiscing\n" +
+        "elit, sed \n" +
+        "do eiusmod\n" +
+        "tempor incididunt\n" +
+        "ut labore \n" +
+        "et dolore \n" +
+        "magna aliqua.\n";
 
     beforeAll(() => {
         wrapper = new Wrapper();
@@ -55,19 +56,16 @@ describe("Word wrap service test", () => {
     test("should return text wrapped when number of text characters is higher than max line", () => {
         const wrappedText = wrapper.wrap(loremIpsumText, 10);
         const validWrappedText =
-            "Lorem ipsu\n" +
-            "m dolor si\n" +
-            "t amet, co\n" +
-            "nsectetur \n" +
+            "Lorem ipsum\n" +
+            "dolor sit \n" +
+            "amet, consectetur\n" +
             "adipiscing\n" +
-            " elit, sed\n" +
-            " do eiusmo\n" +
-            "d tempor i\n" +
-            "ncididunt \n" +
+            "elit, sed \n" +
+            "do eiusmod\n" +
+            "tempor incididunt\n" +
             "ut labore \n" +
             "et dolore \n" +
-            "magna aliq\n" +
-            "ua.";
+            "magna aliqua.\n";
         expect(wrappedText).toEqual(validWrappedText);
     });
 });
