@@ -14,6 +14,21 @@ export class WordWrapService {
         return text.length >= lines;
     }
 
-    wrap(text: string, lines: number) {
+    wrap(text: string, lines: number): string {
+        const splitted = text.split(' ');
+        let textLine = '';
+        const arrayOfLines = [];
+        for (let i = 0; i < splitted.length; i++) {
+            const word = splitted[i];
+            textLine = !textLine.length 
+                ? word 
+                : textLine + " " + word;
+            if (textLine.length === 9) textLine = textLine + " ";
+            if (textLine.length >= lines) {
+                arrayOfLines.push(textLine);
+                textLine = '';
+            }            
+        }
+        return arrayOfLines.join('\n');
     }
 }

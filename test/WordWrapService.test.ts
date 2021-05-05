@@ -25,7 +25,6 @@ describe("Word wrap service test", () => {
     test("should wrap the text ", () => {
         const inputText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         const outputText = wordWrapService.wrap(inputText, 10);
-        console.log(outputText)
         expect(outputText).toEqual(
             "Lorem ipsum\n" +
             "dolor sit \n" +
@@ -36,7 +35,7 @@ describe("Word wrap service test", () => {
             "tempor incididunt\n" +
             "ut labore \n" +
             "et dolore \n" +
-            "magna aliqua.\n"
+            "magna aliqua."
         );
     });
 
