@@ -9,6 +9,10 @@ export class Wrapper {
     }
 
     wrap(inputText: string, maxLine: number) {
-        throw new WrapperValidationError();
+        if (maxLine <= 0) {
+            throw new WrapperValidationError();
+        }
+
+        return "";
     }
 }
