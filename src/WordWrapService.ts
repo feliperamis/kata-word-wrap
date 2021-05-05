@@ -14,8 +14,6 @@ export class WordWrapService {
         return text.length >= lines;
     }
 
-    wrap(text: string, lines: number): string {
-        const regex = new RegExp('.{1,' + lines + '}', 'g');
-        return text.match(regex).join('\n');
+    wrap(text: string, lines: number) {
     }
 }
