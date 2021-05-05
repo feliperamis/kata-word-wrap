@@ -26,16 +26,20 @@ describe("Word wrap service test", () => {
         const inputText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         const outputText = wordWrapService.wrap(inputText, 10);
         expect(outputText).toEqual(
-            "Lorem ipsum\n" +
+            "Lorem \n" +
+            "ipsum \n" +
             "dolor sit \n" +
-            "amet, consectetur\n" +
+            "amet, \n" +
+            "consectetur\n" +
             "adipiscing\n" +
             "elit, sed \n" +
             "do eiusmod\n" +
-            "tempor incididunt\n" +
+            "tempor \n" +
+            "incididunt\n" +
             "ut labore \n" +
             "et dolore \n" +
-            "magna aliqua."
+            "magna \n" +
+            "aliqua."
         );
     });
 
