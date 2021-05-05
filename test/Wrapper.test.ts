@@ -29,7 +29,7 @@ describe("Word wrap service test", () => {
     // Validación código
 
     test("should return error if max line number is not a positive non zero number", () => {
-        expect(wrapper.wrap("Lorep ipsum", -2)).toThrow(WrapperValidationError);
+        expect(() => {wrapper.wrap("Lorep ipsum", -2)}).toThrow(Error);
     });
 
     // Validación texto

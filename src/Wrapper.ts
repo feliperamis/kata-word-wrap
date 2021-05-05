@@ -1,3 +1,5 @@
+import {WrapperValidationError} from "./WrapperValidationError";
+
 export class Wrapper {
     constructor() {
     }
@@ -7,6 +9,6 @@ export class Wrapper {
     }
 
     wrap(inputText: string, maxLine: number) {
-        return "";
+        throw new WrapperValidationError();
     }
 }
