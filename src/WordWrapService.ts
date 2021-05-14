@@ -20,7 +20,6 @@ export class WordWrapService {
         const arrayOfLines = [];
         for (let i = 0; i < splitted.length; i++) {
             const word = splitted[i];
-            console.log(word)
             let forceJump = false;
             if (!textLine.length) {
                 textLine = word;
@@ -46,7 +45,6 @@ export class WordWrapService {
                 forceJump = false;
             }            
         }
-        console.log(arrayOfLines)
         return arrayOfLines.join("\n");
     }
 }
